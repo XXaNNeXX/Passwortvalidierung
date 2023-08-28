@@ -1,3 +1,5 @@
+import org.apache.commons.lang3.StringUtils;
+
 public class Validation {
 
     public static boolean isValid(String pw) {
@@ -24,5 +26,10 @@ public class Validation {
             }
         }
         return false;
+    }
+
+    public static boolean containsBadString(String pw) {
+
+       return (StringUtils.containsAny(pw, "123456") || StringUtils.containsAny(pw, "passwort"));
     }
 }

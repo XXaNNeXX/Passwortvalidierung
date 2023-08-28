@@ -28,4 +28,12 @@ public class ValidationTest {
         Assertions.assertEquals(expected, actual);
     }
 
+    @Test
+    void password_containsBadString() {
+        String pw = "passwort";
+        boolean actual = Validation.containsBadString(pw);
+        boolean expected = true;
+        Assertions.assertEquals(expected, actual);
+    }
+
 }

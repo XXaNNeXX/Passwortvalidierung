@@ -12,4 +12,12 @@ public class ValidationTest {
         Assertions.assertEquals(expected, actual);
     }
 
+    @Test
+    void password_containsNumbers() {
+        String pw = "123456";
+        boolean actual = Validation.containsNumbers(pw);
+        boolean expected = true;
+        Assertions.assertEquals(expected, actual);
+    }
+
 }

@@ -54,4 +54,26 @@ public class Validation {
         }
         return false;
     }
+
+    public static String randomPassword(int length) {
+
+        //c.f. https://xperti.io/blogs/generate-random-string-in-java/
+
+        String lowerCase = "abcdefghijklmnopqrstuvwxyz";
+        String upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        String numbers = "1234567890";
+        String specialChar = "!@#$%^&*()-_=+[]{}|;:,.<>?";
+
+        String all = lowerCase + upperCase + numbers + specialChar;
+
+        StringBuilder s = new StringBuilder(length);
+
+        for(int i = 0; i < length; i++) {
+            int allInt = (int)(all.length() * Math.random());
+            s.append(all.charAt(allInt));
+        }
+        return s.toString();
+    }
+
+
 }

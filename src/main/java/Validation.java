@@ -32,4 +32,15 @@ public class Validation {
 
        return (StringUtils.containsAny(pw, "123456") || StringUtils.containsAny(pw, "passwort"));
     }
+
+    public static boolean containsSpecialCharacters(String pw) {
+
+        char[] special = {'@', '+','%', '#'};
+        for(char i : special) {
+           if(StringUtils.containsAny(pw, i)) {
+                return true;
+            }
+        }
+        return false;
+    }
 }

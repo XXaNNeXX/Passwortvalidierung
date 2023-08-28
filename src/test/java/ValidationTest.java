@@ -13,7 +13,7 @@ public class ValidationTest {
     }
 
     @Test
-    void password_containsNumbers() {
+    void password_containsNumbers_isTrue() {
         String pw = "123456";
         boolean actual = Validation.containsNumbers(pw);
         boolean expected = true;
@@ -21,7 +21,7 @@ public class ValidationTest {
     }
 
     @Test
-    void password_containsUpperLowerCase() {
+    void password_containsUpperLowerCase_IsTrue() {
         String pw = "Password";
         boolean actual = Validation.containsUpperLowerCase(pw);
         boolean expected = true;
@@ -29,10 +29,26 @@ public class ValidationTest {
     }
 
     @Test
-    void password_containsBadString() {
+    void password_containsBadString_isTrue() {
         String pw = "passwort";
         boolean actual = Validation.containsBadString(pw);
         boolean expected = true;
+        Assertions.assertEquals(expected, actual);
+    }
+
+    @Test
+    void password_containsSpecialCharacters_isTrue() {
+        String pw = "password#";
+        boolean actual = Validation.containsSpecialCharacters(pw);
+        boolean expected = true;
+        Assertions.assertEquals(expected, actual);
+    }
+
+    @Test
+    void password_containsSpecialCharacters_isFalse() {
+        String pw = "password";
+        boolean actual = Validation.containsSpecialCharacters(pw);
+        boolean expected = false;
         Assertions.assertEquals(expected, actual);
     }
 

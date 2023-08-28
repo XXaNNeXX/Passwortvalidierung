@@ -52,4 +52,20 @@ public class ValidationTest {
         Assertions.assertEquals(expected, actual);
     }
 
+    @Test
+    void password_containsSpecialCharacters_isTrue2() {
+        String pw = "password#";
+        boolean actual = Validation.containsSpecialCharacters2(pw);
+        boolean expected = true;
+        Assertions.assertEquals(expected, actual);
+    }
+
+    @Test
+    void password_containsSpecialCharacters_isFalse2() {
+        String pw = "password#";
+        boolean actual = Validation.containsSpecialCharacters2(pw);
+        boolean expected = false;
+        Assertions.assertEquals(expected, actual);
+    }
+
 }

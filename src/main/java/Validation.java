@@ -43,4 +43,15 @@ public class Validation {
         }
         return false;
     }
+
+    public static boolean containsSpecialCharacters2(String pw) {
+
+        String special = "@%+#<>";
+        for(char i : pw.toCharArray()) {
+            if(special.contains(String.valueOf(i))) {
+                return true;
+            }
+        }
+        return false;
+    }
 }

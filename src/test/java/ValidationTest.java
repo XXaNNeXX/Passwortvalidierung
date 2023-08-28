@@ -20,4 +20,12 @@ public class ValidationTest {
         Assertions.assertEquals(expected, actual);
     }
 
+    @Test
+    void password_containsUpperLowerCase() {
+        String pw = "Password";
+        boolean actual = Validation.containsUpperLowerCase(pw);
+        boolean expected = true;
+        Assertions.assertEquals(expected, actual);
+    }
+
 }
